@@ -4,7 +4,12 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            decimal amountDecimal = 5000000m;
+            IFormatProvider usFormatProvider =
+                new System.Globalization.CultureInfo("en-US");
+
+            string decimalAmount = amountDecimal.ToString("#,##0.00", usFormatProvider);
+            Console.WriteLine($"Decimal Amount {decimalAmount}");
         }
     }
 }
